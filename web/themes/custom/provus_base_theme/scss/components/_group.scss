@@ -57,6 +57,7 @@
           }
 
           .lightslider {
+            height: 100% !important;
             .slide {
               padding: $padding-padding-xxs;
             }
@@ -275,6 +276,15 @@
       .field__item {
         display: flex;
         justify-content: center;
+      }
+    }
+  }
+
+  .provus-card-image-circle {
+    .card {
+      .card-img-top {
+        max-width: rem-calc(224);
+        max-height: rem-calc(224);
       }
     }
   }
