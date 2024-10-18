@@ -286,6 +286,10 @@
         max-width: rem-calc(224);
         max-height: rem-calc(224);
       }
+
+      .card-title {
+        margin-bottom: $padding-padding-xxs;
+      }
     }
   }
 
