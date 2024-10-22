@@ -20,7 +20,7 @@ services:
       build:
         - composer self-update
         - composer install --optimize-autoloader
-        - COMPOSER_ROOT_VERSION="${TUGBOAT_GITLAB_TARGET:-$TUGBOAT_PREVIEW}-dev" composer require drush/drush
+        - composer require drush/drush
         - ${TUGBOAT_ROOT}/vendor/bin/drush updatedb -y
         - ${TUGBOAT_ROOT}/vendor/bin/drush cache:rebuild
   mysql:
