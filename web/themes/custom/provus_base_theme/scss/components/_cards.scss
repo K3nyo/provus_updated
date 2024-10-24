@@ -315,7 +315,6 @@
     margin: 0 auto;
 
     .card-wrapper {
-      margin: auto;
       padding: 0;
       width: 100%;
       border-radius: 0;
@@ -352,8 +351,10 @@
     text-decoration: none;
 
     &:hover {
-      h3 {
-        color: $text-colors-body-color;
+      .card-title {
+        .field--name-field-provus-title {
+          color: $primary-colors-primary-hover;
+        }
       }
 
       .card-img-top {
