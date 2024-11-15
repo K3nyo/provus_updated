@@ -121,7 +121,7 @@ function provus_install_demo_content(array &$install_state) {
       ],
     ];
 
-    foreach ($content as $pattern => $item) {
+    foreach($content as $pattern => $item) {
       $path = \Drupal::service('path_alias.manager')->getPathByAlias($pattern);
     
       if (preg_match('/node\/(\d+)/', $path, $matches)) {
