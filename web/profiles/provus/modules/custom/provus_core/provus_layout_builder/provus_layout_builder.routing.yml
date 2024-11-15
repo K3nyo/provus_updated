@@ -1,0 +1,7 @@
+provus_layout_builder.browser.settings_form:
+  path: '/admin/config/layout-builder-style-option'
+  defaults:
+    _title: 'Layout Builder Custom Browser'
+    _form: 'Drupal\provus_layout_builder\Form\LayoutBuilderCustomBrowser'
+  requirements:
+    _role: 'administrator'

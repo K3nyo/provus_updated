@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Card Icon
+status: stable
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: 'Title'
+      description: 'Main title'
+    body:
+      type: string
+      title: 'Body'
+      description: 'Main content text'
+      items:
+        type: object
+    more_content:
+      type: string
+      title: More content
+      description: 'String of content'
+    image:
+      type: string
+      title: 'Image URL'
+      description: 'Main image'

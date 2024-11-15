@@ -1,0 +1,21 @@
+<div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+  <div class="row">
+    <div class="col-md-6">
+      {% if event_title %}
+        <h2>{{ card_title_top }}</h2>
+        {{ event_title }}
+      {% endif %}
+    </div>
+    <div class="col-md-6">
+      {% if dates %}
+        <h2>{{ 'Dates'|t }}</h2>
+        {{ provus_dates }}
+      {% endif %}
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-12 mt-5">
+      <h2>{{ card_title_bottom }}</h2>
+      {{ body }}
+    </div>
+</div>

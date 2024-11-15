@@ -1,0 +1,10 @@
+<div{{ content_attributes.addClass('card') }}>
+  <div class="card-body">
+    <h3 class="card-title">
+      <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+    </h3>
+    {% if body|render %}
+      <div class="card-text">{{ body }}</div>
+    {% endif %}
+  </div>
+</div>

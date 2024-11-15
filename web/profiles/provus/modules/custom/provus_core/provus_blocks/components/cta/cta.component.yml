@@ -1,0 +1,32 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Accordion
+status: stable
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: 'Title'
+      description: 'Main title'
+    body:
+      type: string
+      title: 'Body'
+      description: 'Main content text'
+    subtitle:
+      type: string
+      title: Sub title
+      description: 'Sub title'
+    wrapper_class:
+      type: string
+      title: 'Wrapper class'
+      description: 'Wrapper class'
+    background_image_path:
+      type: string
+      title: 'Background image path'
+      description: 'Background image path'
+    links:
+      type: string
+      title: 'Links'
+      description: 'Links'
+  required:
+    - wrapper_class

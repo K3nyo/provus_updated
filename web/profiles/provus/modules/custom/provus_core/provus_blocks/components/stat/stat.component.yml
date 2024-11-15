@@ -1,0 +1,23 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Stat Group
+status: stable
+props:
+  type: object
+  properties:
+    content_attributes:
+      type: string
+      title: 'Content attributes'
+      description: 'Same as attributes, except applied to the main content tag that appears in the template.'
+    title:
+      type: string
+      title: 'Title'
+      description: 'Title'
+    blocks:
+      type: ['array', 'null']
+      title: Blocks
+      description: An array of blocks
+      items:
+        type: object
+  required:
+    - content_attributes
+    - blocks

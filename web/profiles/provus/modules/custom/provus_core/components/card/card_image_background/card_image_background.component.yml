@@ -1,0 +1,25 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Accordion
+status: stable
+props:
+  type: object
+  properties:
+    content_attributes:
+      type: string
+      title: 'Content attributes'
+      description: 'Same as attributes, except applied to the main content tag that appears in the template.'
+    title:
+      type: string
+      title: 'Title'
+      description: 'Main title'
+    bg_image_path:
+      type: string
+      title: 'Image URL'
+      description: 'Background image'
+    link:
+      type: ['string', 'null']
+      title: 'Link'
+      description: 'Link'
+  required:
+    - content_attributes
+    - link

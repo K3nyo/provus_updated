@@ -1,0 +1,29 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Testimonial
+status: stable
+props:
+  type: object
+  properties:
+    content_attributes:
+      type: string
+      title: 'Content attributes'
+      description: 'Same as attributes, except applied to the main content tag that appears in the template.'
+    image:
+      type: string
+      title: 'Image'
+      description: 'Image'
+    body:
+      type: string
+      title: 'Body'
+      description: ''
+    name:
+      type: string
+      title: 'Name'
+      description: ''
+    role:
+      type: string
+      title: 'Role'
+      description: ''
+  required:
+    - content_attributes
+

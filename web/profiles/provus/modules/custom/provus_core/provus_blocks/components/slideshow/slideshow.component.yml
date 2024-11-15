@@ -1,0 +1,34 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Slideshow
+status: stable
+props:
+  type: object
+  properties:
+    content_attributes:
+      type: string
+      title: 'Content attributes'
+      description: 'Same as attributes, except applied to the main content tag that appears in the template.'
+    autoplay:
+      type: string
+      title: 'Autoplay'
+      description: ''
+    speed:
+      type: string
+      title: 'Speed'
+      description: ''
+    slide_items:
+      type: array
+      title: Slide Items
+      description: An array of accordion items
+      items:
+        type: object
+  required:
+    - content_attributes
+    - autoplay
+    - speed
+    - slide_items
+libraryOverrides:
+  js:
+    slideshow.js: { minified: true }
+  dependencies:
+    - provus_bootstrap/slick

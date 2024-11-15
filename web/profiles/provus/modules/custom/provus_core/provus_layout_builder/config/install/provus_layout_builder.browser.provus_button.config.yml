@@ -1,0 +1,6 @@
+field_provus_button_arrangement:
+  inline: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_button--field_provus_button_arrangement--inline.svg
+  stacked: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_button--field_provus_button_arrangement--stacked.svg
+dependencies:
+  config:
+    - provus_layout_builder.browser.config

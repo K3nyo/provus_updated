@@ -1,0 +1,19 @@
+<div class="list">
+  {% if image|render %}
+    <div class="list-icon">
+      <div class="card-img img-fluid">
+        {{ image }}
+      </div>
+    </div>
+  {% endif %}
+  <div class="list-text">
+    {% if title|render %}
+      <div class="list-text-title">
+        <a href="{{ url }}" rel="bookmark">{{ title }}</a>
+      </div>
+    {% endif %}
+    {% if body|render %}
+      <div class="list-text-text">{{ body }}</div>
+    {% endif %}
+  </div>
+</div>

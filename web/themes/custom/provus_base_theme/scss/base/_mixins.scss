@@ -166,12 +166,27 @@ $rem-base: 16px;
     margin-right: calc(#{$dot-spacing} / 2);
     margin-left: calc(#{$dot-spacing} / 2);
   }
-  li:hover a,
+  li:hover a {
+    border-width: #{$border-width};
+    border-style: solid;
+    border-color: #{$hover-color};
+    background: #{$hover-color};
+  }
   li.active > a {
     border-width: #{$border-width};
     border-style: solid;
     border-color: #{$hover-color};
     background: #{$hover-color};
+
+    &:hover {
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+      background: $primary-colors-primary-hover;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.5);
+      background: $primary-accent;
+    }
   }
 }
 

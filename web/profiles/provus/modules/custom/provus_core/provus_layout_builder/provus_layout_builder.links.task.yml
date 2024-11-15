@@ -1,0 +1,4 @@
+provus_layout_builder.browser.settings_form:
+  title: Provus Blocks
+  route_name: provus_layout_builder.browser.settings_form
+  base_route: layout_builder_browser.admin_blocklisting

@@ -1,0 +1,23 @@
+{% if link %}
+    <a href="{{ link }}">
+  {% endif %}
+  
+<div class="list">
+  <div class="list-icon">
+    {{ icon }}
+  </div>
+  <div class="list-text">
+    <div class="list-text-title">
+      {{ title }}
+    </div>
+    {% if body %}
+      <div class="list-text-text">
+        {{ body }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% if link %}
+  </a>
+{% endif %}

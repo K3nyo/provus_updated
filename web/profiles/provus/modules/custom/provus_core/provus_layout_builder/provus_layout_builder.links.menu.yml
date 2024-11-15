@@ -1,0 +1,6 @@
+provus_layout_builder.settings_form:
+  title: 'Provus Layout Builder Custom Browser'
+  description: 'Select block type to upload Icons on layout browser.'
+  parent: system.admin_config_content
+  route_name: provus_layout_builder.browser.settings_form
+  weight: 100

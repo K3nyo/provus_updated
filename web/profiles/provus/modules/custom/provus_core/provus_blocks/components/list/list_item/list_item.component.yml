@@ -1,0 +1,26 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: List item
+status: stable
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: 'Title'
+      description: 'Title'
+    icon:
+      type: string
+      title: 'Icon'
+      description: 'Icon'
+    body:
+      type: string
+      title: 'Body'
+      description: 'Body'
+    link:
+      type: ['string', 'null']
+      title: 'Link'
+      description: 'Link'
+  required:
+    - title
+    - icon
+

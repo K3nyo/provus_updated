@@ -1,0 +1,359 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/provus-updated.docksal\/404?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/provus-updated.docksal\/rest\/type\/node\/provus_landing_page"
+        },
+        "http:\/\/provus-updated.docksal\/rest\/relation\/node\/provus_landing_page\/revision_uid": [
+            {
+                "href": "http:\/\/provus-updated.docksal\/user\/1?_format=hal_json"
+            }
+        ],
+        "http:\/\/provus-updated.docksal\/rest\/relation\/node\/provus_landing_page\/uid": [
+            {
+                "href": "http:\/\/provus-updated.docksal\/user\/1?_format=hal_json",
+                "lang": "en"
+            }
+        ]
+    },
+    "nid": [
+        {
+            "value": 13
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6640bf75-924d-46c5-9e1f-3cb7287db121"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "provus_landing_page"
+        }
+    ],
+    "revision_timestamp": [
+        {
+            "value": "2024-11-15T02:16:27+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "_embedded": {
+        "http:\/\/provus-updated.docksal\/rest\/relation\/node\/provus_landing_page\/revision_uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/provus-updated.docksal\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/provus-updated.docksal\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "61adef0e-9af4-4fc3-9c9f-10462dbc332d"
+                    }
+                ]
+            }
+        ],
+        "http:\/\/provus-updated.docksal\/rest\/relation\/node\/provus_landing_page\/uid": [
+            {
+                "_links": {
+                    "self": {
+                        "href": "http:\/\/provus-updated.docksal\/user\/1?_format=hal_json"
+                    },
+                    "type": {
+                        "href": "http:\/\/provus-updated.docksal\/rest\/type\/user\/user"
+                    }
+                },
+                "uuid": [
+                    {
+                        "value": "61adef0e-9af4-4fc3-9c9f-10462dbc332d"
+                    }
+                ],
+                "lang": "en"
+            }
+        ]
+    },
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "404",
+            "lang": "en"
+        }
+    ],
+    "created": [
+        {
+            "value": "2024-11-15T01:51:18+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2024-11-15T02:16:27+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "promote": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "sticky": [
+        {
+            "value": false,
+            "lang": "en"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "moderation_state": [
+        {
+            "value": "published",
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "tag": "meta",
+            "attributes": {
+                "name": "title",
+                "content": "404 | Provus"
+            },
+            "lang": "en"
+        },
+        {
+            "tag": "link",
+            "attributes": {
+                "rel": "canonical",
+                "href": "http:\/\/provus-updated.docksal\/404"
+            },
+            "lang": "en"
+        }
+    ],
+    "path": [
+        {
+            "alias": "\/404",
+            "pid": 29,
+            "langcode": "en",
+            "lang": "en"
+        }
+    ],
+    "layout_builder__layout": [
+        {
+            "section": {
+                "layout_id": "bootstrap_layout_builder:blb_col_1",
+                "layout_settings": {
+                    "label": "",
+                    "container_wrapper_classes": "",
+                    "container_wrapper_attributes": null,
+                    "container_wrapper": {
+                        "bootstrap_styles": {
+                            "background": {
+                                "background_type": "color"
+                            },
+                            "background_color": {
+                                "class": null
+                            },
+                            "background_media": {
+                                "image": {
+                                    "media_id": null
+                                },
+                                "video": {
+                                    "media_id": null
+                                },
+                                "background_options": {
+                                    "background_position": "center",
+                                    "background_repeat": "no-repeat",
+                                    "background_attachment": "not_fixed",
+                                    "background_size": "cover"
+                                }
+                            },
+                            "padding": {
+                                "class": "_none"
+                            },
+                            "padding_left": {
+                                "class": "_none"
+                            },
+                            "padding_top": {
+                                "class": "_none"
+                            },
+                            "padding_right": {
+                                "class": "_none"
+                            },
+                            "padding_bottom": {
+                                "class": "_none"
+                            },
+                            "margin": {
+                                "class": "_none"
+                            },
+                            "margin_left": {
+                                "class": "_none"
+                            },
+                            "margin_top": {
+                                "class": "_none"
+                            },
+                            "margin_right": {
+                                "class": "_none"
+                            },
+                            "margin_bottom": {
+                                "class": "_none"
+                            }
+                        }
+                    },
+                    "container_wrapper_bg_color_class": "",
+                    "container_wrapper_bg_media": null,
+                    "container": "container",
+                    "section_classes": "",
+                    "section_attributes": null,
+                    "regions_classes": {
+                        "blb_region_col_1": ""
+                    },
+                    "regions_attributes": {
+                        "blb_region_col_1": null
+                    },
+                    "breakpoints": [],
+                    "layout_regions_classes": [],
+                    "remove_gutters": "0",
+                    "context_mapping": []
+                },
+                "components": [
+                    {
+                        "uuid": null,
+                        "region": "content",
+                        "configuration": {
+                            "id": "field_block:node:provus_landing_page:field_metatag",
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "formatter": {
+                                "type": "metatag_empty_formatter",
+                                "label": "above",
+                                "settings": [],
+                                "third_party_settings": []
+                            }
+                        },
+                        "weight": 0,
+                        "additional": []
+                    },
+                    {
+                        "uuid": "d225f4b5-fe75-4103-9b36-3f46ab2eab6d",
+                        "region": "blb_region_col_1",
+                        "configuration": {
+                            "label_display": "0",
+                            "context_mapping": {
+                                "entity": "layout_builder.entity"
+                            },
+                            "id": "extra_field_block:node:provus_landing_page:content_moderation_control"
+                        },
+                        "weight": 0,
+                        "additional": []
+                    },
+                    {
+                        "uuid": "23dba757-f43a-45ed-bbd8-4640697c065c",
+                        "region": "blb_region_col_1",
+                        "configuration": {
+                            "id": "inline_block:provus_heading",
+                            "label": "Heading",
+                            "label_display": false,
+                            "provider": "layout_builder",
+                            "view_mode": "full",
+                            "block_id": "84",
+                            "block_serialized": null,
+                            "context_mapping": [],
+                            "type": "provus_heading",
+                            "uuid": "88c59d4d-6528-4d91-8753-e8e633388dc1",
+                            "block_uuid": "88c59d4d-6528-4d91-8753-e8e633388dc1"
+                        },
+                        "weight": 1,
+                        "additional": []
+                    },
+                    {
+                        "uuid": "033ee59f-d9b4-4e83-af0c-7752a017e9d0",
+                        "region": "blb_region_col_1",
+                        "configuration": {
+                            "id": "inline_block:provus_basic_text",
+                            "label": "",
+                            "label_display": false,
+                            "provider": "layout_builder",
+                            "view_mode": "full",
+                            "block_id": "85",
+                            "block_serialized": null,
+                            "context_mapping": [],
+                            "type": "provus_basic_text",
+                            "uuid": "297c9f16-9aee-4bff-a1ef-c5ea9d18a06c",
+                            "block_uuid": "297c9f16-9aee-4bff-a1ef-c5ea9d18a06c"
+                        },
+                        "weight": 2,
+                        "additional": []
+                    },
+                    {
+                        "uuid": "81013116-39c4-4b25-b7ed-b3c332883f9c",
+                        "region": "blb_region_col_1",
+                        "configuration": {
+                            "id": "inline_block:provus_button",
+                            "label": "Button",
+                            "label_display": false,
+                            "provider": "layout_builder",
+                            "view_mode": "full",
+                            "block_id": "86",
+                            "block_serialized": null,
+                            "context_mapping": [],
+                            "type": "provus_button",
+                            "uuid": "1131f8c1-ed78-4d3d-8807-e2d37d0d48a6",
+                            "block_uuid": "1131f8c1-ed78-4d3d-8807-e2d37d0d48a6"
+                        },
+                        "weight": 3,
+                        "additional": []
+                    },
+                    {
+                        "uuid": "2fd24214-911a-48d9-83ee-5b53542c28c1",
+                        "region": "blb_region_col_1",
+                        "configuration": {
+                            "id": "inline_block:provus_basic_text",
+                            "label": "",
+                            "label_display": false,
+                            "provider": "layout_builder",
+                            "view_mode": "full",
+                            "block_id": "87",
+                            "block_serialized": null,
+                            "context_mapping": [],
+                            "type": "provus_basic_text",
+                            "uuid": "db404b51-afa3-4be4-856d-9fb90bd3dadf",
+                            "block_uuid": "db404b51-afa3-4be4-856d-9fb90bd3dadf"
+                        },
+                        "weight": 4,
+                        "additional": []
+                    }
+                ],
+                "third_party_settings": []
+            }
+        }
+    ]
+}

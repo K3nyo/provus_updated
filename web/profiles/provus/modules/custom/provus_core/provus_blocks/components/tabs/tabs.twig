@@ -1,0 +1,24 @@
+<div class="{{ orientation }}-tabs" id="tabs{{ id }}">
+  <ul class="nav nav-tabs {{ orientation }}-tabs__menu" role="tablist">
+    {# Loops through the tab sections to print the tab section titles. #}
+    {% for key, item in items %}
+      {% if key|first != '#' %}
+        <li class="nav-item {{ orientation }}-tabs__menu-item" role="presentation">
+          <a aria-controls="tab-{{ id }}-{{ key + 1 }}" class="nav-link tab-clickable {% if loop.first %}active{% endif %}" data-bs-target="#tab-{{ id }}-{{ key + 1 }}" id="tab-{{ id }}-{{ key + 1 }}-tab" href="#" data-bs-toggle="tab" role="tab">
+            {{ item.title }}
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+  <div class="tab-content {{ orientation }}-tabs__content">
+    {# Loops through the tab sections again to print the tab section bodies. #}
+    {% for key, item in items %}
+      {% if key|first != '#' %}
+        <div role="tabpanel" class="tab-pane {{ orientation }}-tabs__pane fade{% if loop.first %} active show{% endif %}" id="tab-{{ id }}-{{ key + 1 }}">
+          {{ item.content }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

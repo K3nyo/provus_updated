@@ -1,0 +1,15 @@
+<div class="list-wrapper">
+  <div class="list-style {{ style }} {{ group_display }}">
+    <ul>
+      <div{{ content_attributes.addClass(rowclass) }}>
+        {% for block in blocks %}
+          <li>
+            <div class="{% if group_number is not null %}col{% endif %}">
+              {{ block }}
+            </div>
+          </li>
+        {% endfor %}
+      </div>
+    </ul>
+  </div>
+</div>

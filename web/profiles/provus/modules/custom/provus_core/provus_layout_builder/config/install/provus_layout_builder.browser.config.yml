@@ -1,0 +1,18 @@
+radio_fields:
+  provus_button:
+    - field_provus_button_arrangement
+  provus_banner:
+    - field_provus_image_position
+  provus_card:
+    - field_provus_item_display
+  provus_testimonial:
+    - field_provus_image_position
+  provus_list:
+    - field_provus_list_orientation
+    - field_provus_list_style
+  provus_group:
+    - field_provus_group_display
+    - field_provus_item_display
+  provus_group_automatic:
+    - field_provus_group_display
+    - field_provus_item_display

@@ -1,0 +1,22 @@
+<div class="list">
+  {% if image|render %}
+    <div class="list-icon">
+      <div class="card-img img-fluid">
+        {{ image }}
+      </div>
+    </div>
+  {% endif %}
+  <div class="list-text">
+    {% if title|render %}
+      <div class="list-text-title">{{ title }}</div>
+    {% endif %}
+    {% if body|render %}
+      <div class="list-text-text">{{ body }}</div>
+    {% endif %}
+    {% if more_content|render %}
+    <div class="card-extra">
+      {{ more_content }}
+    </div>
+    {% endif %}
+  </div>
+</div>

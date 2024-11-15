@@ -1,0 +1,49 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Hero Banner
+status: stable
+props:
+  type: object
+  properties:
+    is_short_banner:
+      type: string
+      title: 'Is Short Banner'
+      description: 'Determines if the banner should be displayed in a short format'
+    image_position:
+      type: string
+      title: 'Image Position'
+      description: 'Specifies the position of the image in the banner'
+    background_color:
+      type: string
+      title: 'Background Color'
+      description: 'The background color of the banner'
+    subtitle:
+      type: string
+      title: 'Subtitle'
+      description: 'Subtitle text for the banner'
+    title:
+      type: object
+      title: 'Title'
+      description: 'Main title of the banner'
+    body:
+      type: string
+      title: 'Body'
+      description: 'Main content text of the banner'
+    links:
+      type: array
+      title: 'Links'
+      description: 'Array of links to be displayed in the banner'
+      items:
+        type: object
+    image:
+      type: string
+      title: 'Image'
+      description: 'URL or reference to the banner image'
+    content_attributes:
+      type: string
+      title: 'Content attributes'
+      description: 'Same as attributes, except applied to the main content tag that appears in the template.'
+  required:
+    - is_short_banner
+    - image_position
+    - background_color
+    - content_attributes

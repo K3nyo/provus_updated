@@ -1,0 +1,10 @@
+{% if title|render %}
+  <h2 class="card-title">{{ title }}</h2>
+{% endif %}
+<div{{ content_attributes.addClass('row') }}>
+  {% for block in blocks %}
+    <div class="col">
+      {{ block }}
+    </div>
+  {% endfor %}
+</div>

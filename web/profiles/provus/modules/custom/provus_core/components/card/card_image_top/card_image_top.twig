@@ -1,0 +1,24 @@
+<div{{ content_attributes.addClass('card') }}>
+  {% if image %}
+    <div class="card-img-top {{ is_image_circle ? 'rounded-circle' : '' }}">
+      {{ image }}
+    </div>
+  {% endif %}
+  <div class="card-body">
+    {% if title|render or body|render %}
+      <div class="card-content">
+        {% if title|render %}
+          <h3 class="card-title"><a href="{{ url }}" rel="bookmark">{{ title }}</a></h3>
+        {% endif %}
+        {% if body|render %}
+          <div class="card-text">{{ body }}</div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if more_content|render %}
+    <div class="card-extra">
+      {{ more_content }}
+    </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,24 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Tabs
+status: stable
+props:
+  type: object
+  properties:
+    id:
+      type: string
+      title: 'ID'
+      description: 'Title'
+    orientation:
+      type: string
+      title: 'Orientation'
+      description: 'Sub title'
+    items:
+      type: array
+      title: Blocks
+      description: An array of blocks
+      items:
+        type: object
+  required:
+    - id
+    - orientation
+    - items

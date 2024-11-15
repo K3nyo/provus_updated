@@ -24,12 +24,18 @@
     .btn-default {
       @extend .btn;
       @extend .btn-outlined;
+      &:hover {
+        color: $primary-colors-primary-hover !important;
+      }
     }
 
     .cta-links {
       a:not(.btn) {
         @extend .btn;
         @extend .btn-outlined;
+        &:hover {
+         color: $primary-colors-primary-hover !important;
+        }
       }
       @include btn-state-border;
     }

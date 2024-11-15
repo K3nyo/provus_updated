@@ -1,0 +1,100 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/provus-updated.docksal\/admin\/content\/block\/85?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/provus-updated.docksal\/rest\/type\/block_content\/provus_basic_text"
+        }
+    },
+    "id": [
+        {
+            "value": 85
+        }
+    ],
+    "uuid": [
+        {
+            "value": "297c9f16-9aee-4bff-a1ef-c5ea9d18a06c"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "provus_basic_text"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2024-11-15T01:57:48+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "(Basic Text) - 1207572831",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2024-11-15T01:57:48+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "tag": "meta",
+            "attributes": {
+                "name": "title",
+                "content": "| Provus"
+            },
+            "lang": "en"
+        },
+        {
+            "tag": "link",
+            "attributes": {
+                "rel": "canonical",
+                "href": "http:\/\/provus-updated.docksal\/homepage"
+            },
+            "lang": "en"
+        }
+    ],
+    "field_provus_body": [
+        {
+            "value": "<p>The page you're looking for might have been removed, had its name changed, or is temporarily unavailable.<\/p><p>Here are a few things you can try:<\/p><ul><li>Check the URL for typos and try again.<\/li><li>Go back to the previous page.<\/li><li>Use the navigation menu to find what you're looking for.<\/li><\/ul>",
+            "format": "basic_html",
+            "processed": "<p>The page you're looking for might have been removed, had its name changed, or is temporarily unavailable.<\/p><p>Here are a few things you can try:<\/p><ul><li>Check the URL for typos and try again.<\/li><li>Go back to the previous page.<\/li><li>Use the navigation menu to find what you're looking for.<\/li><\/ul>",
+            "summary": "",
+            "lang": "en"
+        }
+    ]
+}

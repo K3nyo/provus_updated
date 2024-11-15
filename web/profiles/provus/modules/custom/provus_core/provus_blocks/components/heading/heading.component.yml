@@ -1,0 +1,22 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Heading
+status: stable
+props:
+  type: object
+  properties:
+    title:
+      type: string
+      title: 'Title'
+      description: 'Title'
+    subtitle:
+      type: string
+      title: 'Sub title'
+      description: 'Sub title'
+    level_tag:
+      type: string
+      title: 'Heading level tag'
+      description: 'Heading level tag'
+  required:
+    - title
+    - subtitle
+    - level_tag

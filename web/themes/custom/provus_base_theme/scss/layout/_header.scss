@@ -39,11 +39,24 @@
 // Search collapse in header
 #searchCollapse {
   right: rem-calc(35);
-  width: rem-calc(460);
-  top: rem-calc(-8);
+  width: rem-calc(300);
   background: transparent;
-  @include media-breakpoint-down(lg) {
-    width: rem-calc(300);
+  top: rem-calc(2);
+  @include media-breakpoint-up(lg) {
+    top: rem-calc(-4);
+    width: rem-calc(460);
+  }
+  .views-exposed-form {
+    .form > div {
+      display: block !important;
+    }
+  }
+  input {
+    border-color: $gray-light;
+    height: 100%;
+    &:hover {
+      background-color: $white;
+    }
   }
 }
 .navbar-form {
@@ -55,7 +68,6 @@
     z-index: 99;
     width: rem-calc(50);
     padding: rem-calc(8 16);
-    top: $padding-padding-xs;
     .fa-xmark {
       display: none;
     }
@@ -81,7 +93,22 @@
 #navbar-main {
   background: $white;
   box-shadow: inset 0px -1.0369px 0px #E5E7EB;
-  padding: 0;
+  padding: $padding-padding-xxs 0;
+  .navbar-toggler {
+    border: none;
+    &.collapsed {
+      .navbar-toggler-icon {
+        background-image: url('../images/mobile.svg');
+      }
+    }
+    .navbar-toggler-icon {
+      background-image: url('../images/close.svg');
+    }
+  }
+
+  .navbar-collapse {
+    margin-bottom: 0;
+  }
   .navbar-nav {
     @include media-breakpoint-down(lg) {
       display: block;

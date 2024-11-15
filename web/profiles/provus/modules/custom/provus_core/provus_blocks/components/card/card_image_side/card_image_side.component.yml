@@ -1,0 +1,39 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Card Image Right
+status: stable
+props:
+  type: object
+  properties:
+    content_attributes:
+      type: string
+      title: 'Content attributes'
+      description: 'Same as attributes, except applied to the main content tag that appears in the template.'
+    title:
+      type: string
+      title: 'Title'
+      description: 'Main title'
+    body:
+      type: string
+      title: 'Body'
+      description: 'Main content text'
+      items:
+        type: object
+    more_content:
+      type: string
+      title: More content
+      description: 'Additional content'
+    header:
+      type: string
+      title: 'Header'
+      description: 'Header'
+    bg_image_path:
+      type: string
+      title: 'Image URL'
+      description: 'Background image'
+    image:
+      type: string
+      title: 'Image URL'
+      description: 'Main image'
+  required:
+    - content_attributes
+    - image

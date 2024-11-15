@@ -1,0 +1,34 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Person Node Type
+status: stable
+props:
+  type: object
+  properties:
+    name:
+      type: string
+      title: Name
+      description: Name of the person
+    about:
+      type: string
+      title: About
+      description: Content about the person
+    job_title:
+      type: string
+      title: Job title
+      description: Job title
+    image:
+      type: string
+      title: Image
+      description: Avatar of the person 
+    email:
+      type: string
+      title: Email address
+      description: Email address
+    phone:
+      type: string
+      title: Phone number
+      description: Phone number
+  required:
+    - name
+    - about
+    - image

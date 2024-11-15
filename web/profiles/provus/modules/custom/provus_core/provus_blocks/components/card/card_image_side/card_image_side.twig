@@ -1,0 +1,34 @@
+<div{{ content_attributes.addClass('card') }}>
+{% if header|render %}
+  <div class="card-header">
+    {{ header }}
+  </div>
+{% endif %}
+  <div class="card-content">
+    {% if image|render %}
+      <div class="card-img img-fluid">
+        {% if bg_image_path is not empty %}
+        <div class="card-img-container position-left" style="background-image: url({{ bg_image_path }})"></div>
+        {% endif %}
+        {{ image }}
+      </div>
+    {% endif %}
+    <div class="card-body">
+      {% if title|render or body|render %}
+        <div class="card-content">
+          {% if title|render %}
+            <div class="card-title">{{ title }}</div>
+          {% endif %}
+          {% if body|render %}
+            <div class="card-text">{{ body }}</div>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if more_content|render %}
+      <div class="card-extra">
+        {{ more_content }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

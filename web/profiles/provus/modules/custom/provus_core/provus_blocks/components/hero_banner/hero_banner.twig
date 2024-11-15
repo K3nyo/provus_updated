@@ -1,0 +1,61 @@
+{% if is_short_banner == 'true' %}
+  <div class="smaller-banner">
+{% endif %}
+{% if image_position == 'full' %}
+  <div class="banner-color-{{ background_color }} banner-background image-full">
+{% elseif image_position == 'left' %}
+  <div class="banner-color-{{ background_color }} banner-background image-left">
+{% elseif image_position == 'right' %}
+  <div class="banner-color-{{ background_color }} banner-background image-right">
+{% endif %}
+  {% if image_position == 'left' or image_position == 'right' %}
+    <div class="container">
+      <div{{ content_attributes.addClass('banner-inner row') }}>
+  {% else %}
+    <div{{ content_attributes.addClass('banner-inner') }}>
+  {% endif %}
+      {% if image %}
+        <div class="banner-image-container position-{{ image_position }}">
+          {{ image }}
+        </div>
+      {% endif %}
+    {% if image_position == 'left' or image_position == 'right' %}
+    <div class="banner-content col-lg-6 col-sm-12">
+    {% else %}
+    <div class="banner-content">
+    {% endif %}
+      <div class="container">
+        <div class="row">
+          {% if image_position == 'full' %}
+            <div class="col-sm-12 col-lg-6">
+          {% else %}
+            <div class="col-sm-12">
+          {% endif %}
+            <div class="banner-content-body">
+            {% if subtitle|render %}
+              <div class="subheading">
+                {{ subtitle }}
+              </div>
+            {% endif %}
+            {% if title|render %}
+              <h1 class="banner-title">{{ title }}</h1>
+            {% endif %}
+            {% if body|render %}
+              <div class="banner-body">{{ body }}</div>
+            {% endif %}
+            {% if links|render %}
+              <div class="banner-links">{{ links }}</div>
+            {% endif %}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if image_position == 'left' or image_position == 'right' %}
+    </div>
+  {% endif %}
+</div>
+</div>
+{% if is_short_banner == 'true' %}
+  </div>
+{% endif %}

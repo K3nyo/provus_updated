@@ -1,0 +1,13 @@
+<div{{ content_attributes.addClass('card') }}>
+  <div class="card-body">
+    {% if title|render %}
+    <div class="card-title">{{ title }}</div>
+    {% endif %}
+    {% if body|render %}
+      <div class="card-text">{{ body }}</div>
+    {% endif %}
+    {% if more_content|render %}
+      {{ more_content }}
+    {% endif %}
+  </div>
+</div>

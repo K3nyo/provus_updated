@@ -1,0 +1,122 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/provus-updated.docksal\/admin\/content\/block\/86?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/provus-updated.docksal\/rest\/type\/block_content\/provus_button"
+        }
+    },
+    "id": [
+        {
+            "value": 86
+        }
+    ],
+    "uuid": [
+        {
+            "value": "1131f8c1-ed78-4d3d-8807-e2d37d0d48a6"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "type": [
+        {
+            "target_id": "provus_button"
+        }
+    ],
+    "revision_created": [
+        {
+            "value": "2024-11-15T02:10:43+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "status": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "info": [
+        {
+            "value": "Button",
+            "lang": "en"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2024-11-15T02:10:43+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "reusable": [
+        {
+            "value": false
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "revision_translation_affected": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ],
+    "metatag": [
+        {
+            "tag": "meta",
+            "attributes": {
+                "name": "title",
+                "content": "| Provus"
+            },
+            "lang": "en"
+        },
+        {
+            "tag": "link",
+            "attributes": {
+                "rel": "canonical",
+                "href": "http:\/\/provus-updated.docksal\/homepage"
+            },
+            "lang": "en"
+        }
+    ],
+    "field_provus_button_arrangement": [
+        {
+            "value": "inline"
+        }
+    ],
+    "field_provus_links": [
+        {
+            "uri": "internal:\/",
+            "title": "Go to Homepage",
+            "options": {
+                "attributes": {
+                    "target": ""
+                },
+                "icon": "",
+                "class": "btn btn-default"
+            },
+            "lang": "en"
+        },
+        {
+            "uri": "internal:\/",
+            "title": "Contact Us",
+            "options": {
+                "attributes": {
+                    "target": ""
+                },
+                "icon": "",
+                "class": "btn btn-default"
+            },
+            "lang": "en"
+        }
+    ]
+}

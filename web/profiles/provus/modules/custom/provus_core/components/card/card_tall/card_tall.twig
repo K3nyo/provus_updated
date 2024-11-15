@@ -1,0 +1,19 @@
+<a href="{{ link }}" rel="bookmark">
+  <div{{ content_attributes.addClass('card') }}>
+    <div class="card-wrapper">
+      {% if image %}
+        <div class="card-img-top">
+          {{ image }}
+        </div>
+      {% endif %}
+      <div class="card-body">
+        {% if content_date is not empty %}
+          <div class="card-date">{{ content_date }}</div>
+        {% endif %}
+        {% if title|render %}
+          <div class="card-title">{{ title }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</a>

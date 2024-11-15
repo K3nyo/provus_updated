@@ -1,0 +1,21 @@
+field_provus_group_display:
+  carousel: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_group_display--Carousel.svg
+  featured_4: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_group_display--4 Card Featured.svg
+  column: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_group_display--Column Row.svg
+  grid_2: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_group_display--Grid - 2.svg
+  grid_3: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_group_display--Grid - 3.svg
+  grid_4: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_group_display--Grid - 4.svg
+field_provus_item_display:
+  provus_card: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Default.svg
+  provus_card_tall: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Card Tall.svg
+  provus_card_bg: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Image Background.svg
+  provus_card_image_circle: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Image Circle.svg
+  provus_card_left: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Image Left.svg
+  provus_card_right: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Image Right.svg
+  provus_card_basic: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Basic.svg
+  provus_card_basic_plus: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Basic Plus.svg
+  provus_card_icon_left: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Icon Left.svg
+  provus_card_inset_media: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_group--field_provus_item_display--Inset Media.svg
+dependencies:
+  config:
+    - provus_layout_builder.browser.config

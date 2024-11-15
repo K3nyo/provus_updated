@@ -352,7 +352,8 @@
 
     &:hover {
       .card-title {
-        .field--name-field-provus-title {
+        .field--name-field-provus-title,
+        .field--name-title {
           color: $primary-colors-primary-hover;
         }
       }

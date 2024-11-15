@@ -157,4 +157,17 @@
   .fc-daygrid-event {
     overflow: hidden;
   }
+  .fc-toolbar {
+    display: block;
+    @include media-breakpoint-up(sm) {
+      display: flex;
+    }
+    .fc-toolbar-chunk {
+      text-align: center;
+    }
+  }
+}
+
+.block-fullcalendar-block {
+  margin-bottom: $padding-padding-xlg;
 }

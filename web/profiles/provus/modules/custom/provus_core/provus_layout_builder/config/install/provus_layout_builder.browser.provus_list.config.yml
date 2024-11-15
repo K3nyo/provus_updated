@@ -1,0 +1,12 @@
+field_provus_list_orientation:
+  stacked: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_list--field_provus_list_orientation--Stacked.svg
+  grid_2: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_list--field_provus_list_orientation--Grid 2.svg
+  grid_3: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_list--field_provus_list_orientation--Grid 3.svg
+  column-row: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_list--field_provus_list_orientation--Column Row.svg
+field_provus_list_style:
+  icon-left: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_list--field_provus_list_orientation--Icon Left.svg
+  icon-right: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_list--field_provus_list_orientation--Icon Right.svg
+  icon-top: /profiles/provus/modules/custom/provus_core/provus_layout_builder/images/provus_list--field_provus_list_orientation--Icon Top.svg
+dependencies:
+  config:
+    - provus_layout_builder.browser.config

@@ -1,0 +1,36 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Event Node Type
+status: stable
+props:
+  type: object
+  properties:
+    content_attributes:
+      type: string
+      title: 'Content attributes'
+      description: 'Same as attributes, except applied to the main content tag that appears in the template.'
+    event_title:
+      type: string
+      title: Event title
+      description: Event title
+    dates:
+      type: string
+      title: Dates
+      description: Full dates
+    body:
+      type: string
+      title: Body
+      description: Content of the event
+    card_title_top:
+      type: string
+      title: Card title top
+      description: Card title top
+    card_title_bottom:
+      type: string
+      title: Card title bottom
+      description: Card title bottom
+  required:
+    - event_title
+    - content_attributes
+    - body
+    - card_title_top
+    - card_title_bottom

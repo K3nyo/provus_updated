@@ -1,0 +1,33 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Card Tall
+status: stable
+props:
+  type: object
+  properties:
+    content_attributes:
+      type: string
+      title: 'Content attributes'
+      description: 'Same as attributes, except applied to the main content tag that appears in the template.'
+    title:
+      type: string
+      title: 'Title'
+      description: 'Main title'
+    link:
+      type: ['string', 'null']
+      title: 'Link'
+      description: 'Link'
+    image_url:
+      type: string
+      title: 'Image URL'
+      description: 'Main image'
+    content_date:
+      type: string
+      title: 'Date'
+      description: 'Date'
+    header:
+      type: string
+      title: 'Header'
+      description: 'Header as alternative content for date'
+  required:
+    - content_attributes
+    - link

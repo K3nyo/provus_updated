@@ -1,3 +1,13 @@
+// Top Nav
+#navbar-top {
+  .system-menu-blockaccount {
+    .dropdown-menu {
+      left: unset;
+      right: 0;
+    }
+  }
+}
+
 // Main Navigation
 #navbar-main .navbar-nav {
   margin-top: rem-calc(20);

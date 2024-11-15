@@ -1,0 +1,36 @@
+$schema: https://git.drupalcode.org/project/drupal/-/raw/10.1.x/core/modules/sdc/src/metadata.schema.json
+name: Mini
+status: stable
+props:
+  type: object
+  properties:
+    start_date:
+      type: string
+      title: Start date
+      description: Start date of event
+    end_date:
+      type: string
+      title: End date
+      description: End date of event
+    full_dates:
+      type: string
+      title: Full dates
+      description: All the dates of the event
+    url:
+      type: string
+      title: URL
+      description: URL
+    event_title:
+      type: string
+      title: Event title
+      description: Event title
+    body:
+      type: string
+      title: Job title
+      description: Job title
+  required:
+    - start_date
+    - end_date
+    - url
+    - event_title
+    - full_dates

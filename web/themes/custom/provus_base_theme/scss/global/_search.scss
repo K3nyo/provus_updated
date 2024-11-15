@@ -8,7 +8,10 @@
     color: $text-primary;
     line-height: 26px;
     margin-bottom: 2rem;
-    margin-top: 2rem;
+    margin-top: 0;
+    @include media-breakpoint-up(md) {
+      margin-top: $padding-padding-xxlg;
+    }
   }
   .views-field-title a {
     font-size: 16px;
@@ -27,6 +30,8 @@
 }
 
 .views-exposed-filter-blockprovus-basic-search-page-1 {
+  margin-bottom: 0;
+  padding-bottom: 0;
   h2 {
     font-size: 46px;
     color: $primary-accent;
@@ -42,6 +47,24 @@
       font-size: 14px;
       font-weight: 700;
     }
+  }
+  .form-checkboxes {
+    .form-check {
+      input.form-checkbox {
+        border: 1px solid $black;
+      }
+      label.form-check-label {
+        padding-top: $padding-padding-xxxs;
+      }
+    }
+  }
+  .form-actions {
+    input.form-submit {
+      color: $white;
+    }
+  }
+  .form-item-sort-bef-combine {
+    margin-bottom: 0 !important;
   }
   .bef-toggle,
   .form-select,
@@ -83,7 +106,7 @@
 
   .form-type-textfield {
     .form-control {
-      border: 1px solid $card-border-color;
+      border: 1px solid $gray-light;
       @include effect-style-elevation-xs();
       @include text-style-body-body-1();
       color: $body-color;
@@ -99,12 +122,35 @@
       }
     }
   }
-}
 
-#searchCollapse {
-  top: 0.35rem !important;
-  right: $padding-padding-xxlg;
-  margin-right: $padding-padding-xxxs;
+  // Search button & Reset Button
+  .form-actions {
+    display: flex;
+    justify-content: center;
+    input {
+      width: 50% !important;
+      &:nth-child(odd) {
+        margin-left: 0;
+        margin-right: $padding-padding-xxxs;
+      }
+      &:nth-child(even) {
+        margin-right: 0;
+        margin-left: $padding-padding-xxxs;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      display: block;
+      input {
+        width: 100% !important;
+        &:nth-child(odd) {
+          margin-right: 0;
+        }
+        &:nth-child(even) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
 }
 
 .region-header-form {

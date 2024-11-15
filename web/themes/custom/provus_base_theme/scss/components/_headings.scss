@@ -342,6 +342,13 @@ a {
         }
       }
     }
+    &.line-off {
+      h1,h2,h3,h4,h5,h6 {
+        div.field {
+          max-width: none;
+        }
+      }
+    }
   }
 
   .subheading {
