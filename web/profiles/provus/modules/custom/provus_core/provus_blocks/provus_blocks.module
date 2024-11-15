@@ -73,9 +73,11 @@ function provus_blocks_theme_suggestions_block_alter(&$suggestions, $vars) {
     if ($block_type == 'provus_group') {
       // Get group display.
       $group_display = $block->get('field_provus_group_display')->value;
-      $display_type = explode('_', $group_display);
-      $suggestions[] = $base_suggestion . '__' . $group_display;
-      $suggestions[] = $base_suggestion . '__' . $display_type[0];
+      if (!is_null($group_display)) {
+        $display_type = explode('_', (string) $group_display);
+        $suggestions[] = $base_suggestion . '__' . $group_display;
+        $suggestions[] = $base_suggestion . '__' . $display_type[0];
+      }
     }
   }
   return $suggestions;
@@ -225,37 +227,44 @@ function provus_blocks_preprocess_block(&$vars) {
     $block_type = $block->bundle();
     // Add block type to class.
     $vars['attributes']['class'][] = Html::cleanCssIdentifier('block-' . $block_type);
-
-    if ($block_type == 'provus_card') {
-      $display_mode = !empty($vars['elements']['content']['#provus_group_item_display']) ? $vars['elements']['content']['#provus_group_item_display'] : $block->get('field_provus_item_display')->value;
-      $vars['cardstyle'] = provus_blocks_get_cardstyle_from_displaymode($display_mode);
+    switch ($block_type) {
+      case 'provus_card':
+        $display_mode = !empty($vars['elements']['content']['#provus_group_item_display']) ? $vars['elements']['content']['#provus_group_item_display'] : $block->get('field_provus_item_display')->value;
+        $vars['cardstyle'] = provus_blocks_get_cardstyle_from_displaymode($display_mode);
+        break;
+      case 'provus_cta':
+        _provus_preprocess_cta($vars, $block);
+        break;
+      case 'provus_tabs':
+        _provus_preprocess_tabs($vars, $block);
+        break;
+      case 'provus_accordion':
+      case 'provus_faq_group': 
+        _provus_preprocess_accordion($vars, $block);
+        break;
+      case 'provus_group':
+        _provus_preprocess_group($vars, $block);
+        break;
+      case 'provus_group_automatic':
+        _provus_preprocess_group_auto($vars, $block);
+        break;
+      case 'provus_stat_group':
+        _provus_preprocess_blocks($vars, $block, 'field_provus_items');
+        break;
+      case 'provus_list':
+        _provus_preprocess_blocks($vars, $block, 'field_provus_list_items');
+        // Get list orientation display.
+        $group_display = $block->get('field_provus_list_orientation')->value;
+        $vars['group_display'] = $group_display;
+        $display_type = explode('_', $group_display);
+        $vars['group_number'] = !empty($display_type[1]) ? $display_type[1] : NULL;
+        break;
+      case 'provus_media':
+        _provus_preprocess_media($vars, $block);
+        break;
+      default:
+        break;
     }
-    elseif ($block_type == 'provus_tabs') {
-      _provus_preprocess_tabs($vars, $block);
-    }
-    elseif ($block_type == 'provus_accordion' || $block_type == 'provus_faq_group') {
-      _provus_preprocess_accordion($vars, $block);
-    }
-    elseif ($block_type == 'provus_group') {
-      _provus_preprocess_group($vars, $block);
-    }
-    elseif ($block_type == 'provus_group_automatic') {
-      _provus_preprocess_group_auto($vars, $block);
-    }
-    elseif ($block_type == 'provus_stat_group') {
-      _provus_preprocess_blocks($vars, $block, 'field_provus_items');
-    }
-    elseif ($block_type == 'provus_list') {
-      _provus_preprocess_blocks($vars, $block, 'field_provus_list_items');
-      // Get list orientation display.
-      $group_display = $block->get('field_provus_list_orientation')->value;
-      $vars['group_display'] = $group_display;
-      $display_type = explode('_', $group_display);
-      $vars['group_number'] = !empty($display_type[1]) ? $display_type[1] : NULL;
-    }
-    elseif ($block_type == 'provus_media') {
-      _provus_preprocess_media($vars, $block);
-    };
   }
 }
 
@@ -275,7 +284,7 @@ function provus_blocks_preprocess_field(&$variables, $hook) {
  */
 function provus_blocks_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   // Use name and label from normal block admin screen to match.
-  $new_label = t('Block description');
+  $new_label = t('Administrative Title');
   $new_description = t('A brief description of your block.');
   // Alter blocks on layout builder form.
   $form_ids_blockcontent = [
@@ -292,6 +301,10 @@ function provus_blocks_form_alter(&$form, FormStateInterface $form_state, $form_
       $form['settings']['label_display']['#default_value'] = FALSE;
       $form['settings']['label_display']['#access'] = FALSE;
       $form['settings']['view_mode']['#access'] = FALSE;
+
+      if (isset($form['settings']['admin_label'])) {
+        $form['settings']['admin_label']['#title'] = 'Block Type';
+      }
     }
   }
   // Alter duplicate form to fix styles and format.
@@ -430,6 +443,24 @@ function _provus_preprocess_accordion(&$vars, $block) {
   }
 }
 
+/**
+ * Preprocess function for cta.
+ */
+function _provus_preprocess_cta(&$vars, $block) {
+  // Set background image uri.
+  $background_image = '';
+  if (!empty($vars['content']['field_provus_cta_background_img'][0])){
+    $media_entity = $vars['content']['field_provus_cta_background_img'][0]['#media'];
+    if ($media_entity->hasField('field_media_image')) {
+      $field_media_image = $media_entity->field_media_image->entity->getFileUri();
+      if ($field_media_image) {
+        $background_image = ImageStyle::load('provus_large_banner')
+        ->buildUrl($field_media_image);
+      }
+    }
+  }
+  $vars['background_img_path'] = $background_image;
+}
 
 /**
  * Preprocess function for media.
@@ -459,14 +490,13 @@ function _provus_preprocess_tabs(&$vars, $block) {
   $storage = \Drupal::entityTypeManager()->getStorage('block_content');
   $vars['id'] = $block->uuid();
   // Loop through the tabs items and store each item in a variable
-  // for the accordion block to render in it's template.
+  // for the accordion block to render in its template.
   $id_array = $block->get('field_provus_items')->getValue();
   if (!empty($id_array)) {
     foreach ($id_array as $key => $id) {
       $entity = $storage->load($id['target_id']);
       if ($entity) {
-        $vars['items'][$key]['title'] = $entity->get('field_provus_title')
-          ->value;
+        $vars['items'][$key]['title'] = $entity->get('field_provus_title')->value;
         // Get block items inside of tab item.
         $blocks = [];
         $view_builder = \Drupal::entityTypeManager()->getViewBuilder('block_content');
@@ -475,10 +505,12 @@ function _provus_preprocess_tabs(&$vars, $block) {
         if (!empty($blocks_id_array)) {
           foreach ($blocks_id_array as $block_key => $block_id) {
             $block_entity = $storage->load($block_id['target_id']);
-            if (!empty($entity)) {
+            if (!empty($block_entity) && $block_entity instanceof \Drupal\Core\Entity\EntityInterface) {
               $block_build['content'] = $view_builder->view($block_entity, 'default');
               provus_blocks_get_block($block_build, $block_entity);
               $blocks[] = $block_build;
+            } else {
+              \Drupal::logger('provus_blocks')->error('Block entity is not valid.');
             }
           }
         }
