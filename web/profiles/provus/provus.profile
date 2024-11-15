@@ -112,10 +112,34 @@ function provus_install_demo_content(array &$install_state) {
 
     // Get nid of homepage and exclude node title.
     list($nothing, $nothing, $nid) = explode('/', $path);
-    $nids = [$nid];
+    $excludeNodeTitle = [$nid];
+
+    $content = [
+      '/404' => [
+        'alias' => '/404',
+        'exclude_node_title' => true,
+      ],
+    ];
+
+    foreach ($content as $pattern => $item) {
+      $path = \Drupal::service('path_alias.manager')->getPathByAlias($pattern);
+    
+      if (preg_match('/node\/(\d+)/', $path, $matches)) {
+        $entity = \Drupal\node\Entity\Node::load($matches[1]);
+        $entity->path = [
+          'alias' => $item['alias'],
+          'pathauto' => 0,
+        ];
+        $entity->save();
+
+        if ($item['exclude_node_title']) {
+          $excludeNodeTitle[] = $matches[1];
+        }
+      }
+    }
     Drupal::configFactory()
       ->getEditable('exclude_node_title.settings')
-      ->set('nid_list', $nids)
+      ->set('nid_list', $excludeNodeTitle)
       ->save(TRUE);
 
     // Set the homepage landing page to published.
