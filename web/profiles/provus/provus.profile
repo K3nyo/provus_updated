@@ -115,7 +115,6 @@ function provus_install_demo_content(array &$install_state) {
     $nids = [$nid];
     $content = [
       '/404' => [
-        'alias' => '/404',
         'exclude_node_title' => true
       ],
     ]
