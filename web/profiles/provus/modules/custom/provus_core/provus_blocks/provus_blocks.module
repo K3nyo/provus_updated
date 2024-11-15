@@ -526,8 +526,10 @@ function _provus_preprocess_tabs(&$vars, $block) {
 function _provus_preprocess_group(&$vars, $block) {
   // Get group display.
   $group_display = $block->get('field_provus_group_display')->value;
-  $display_type = explode('_', $group_display);
-  $vars['group_number'] = !empty($display_type[1]) ? $display_type[1] : NULL;
+  if (!is_null($group_display)) {
+    $display_type = explode('_', (string) $group_display);
+    $vars['group_number'] = !empty($display_type[1]) ? $display_type[1] : NULL;
+  }
   // Get item display.
   $vars['display_content'] = $block->get('field_provus_item_display')->value;
   $vars['group_display'] = $group_display;
