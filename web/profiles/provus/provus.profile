@@ -113,6 +113,12 @@ function provus_install_demo_content(array &$install_state) {
     // Get nid of homepage and exclude node title.
     list($nothing, $nothing, $nid) = explode('/', $path);
     $nids = [$nid];
+    $content = [
+      '/404' => [
+        'alias' => '/404',
+        'exclude_node_title' => true
+      ],
+    ]
     Drupal::configFactory()
       ->getEditable('exclude_node_title.settings')
       ->set('nid_list', $nids)
