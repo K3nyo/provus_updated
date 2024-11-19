@@ -107,7 +107,7 @@
             "lang": "en"
         },
         {
-            "uri": "https:\/\/www.prometsource.com\/contact",
+            "uri": "internal:\/",
             "title": "Contact Us",
             "options": {
                 "attributes": {

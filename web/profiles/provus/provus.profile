@@ -68,13 +68,14 @@ function provus_install_extensions(array &$install_state) {
       $install_core_search = FALSE;
     }
   }
-  if ($install_core_search) {
-    $batch['operations'][] = ['provus_install_module', (array) 'search'];
-    // Enable default permissions for system roles.
-    user_role_grant_permissions(AccountInterface::ANONYMOUS_ROLE, [
-      'search content',
-    ]);
-  }
+  // No need to install search & grant permission related to search.
+  // if ($install_core_search) {
+  //   $batch['operations'][] = ['provus_install_module', (array) 'search'];
+  //   // Enable default permissions for system roles.
+  //   user_role_grant_permissions(AccountInterface::ANONYMOUS_ROLE, [
+  //     'search content',
+  //   ]);
+  // }
 
   return $batch;
 }
@@ -123,7 +124,7 @@ function provus_install_demo_content(array &$install_state) {
 
     foreach($content as $pattern => $item) {
       $path = \Drupal::service('path_alias.manager')->getPathByAlias($pattern);
-    
+
       if (preg_match('/node\/(\d+)/', $path, $matches)) {
         $entity = \Drupal\node\Entity\Node::load($matches[1]);
         $entity->path = [
@@ -149,6 +150,23 @@ function provus_install_demo_content(array &$install_state) {
       $node->setRevisionLogMessage('Changed moderation state to Published.');
     }
     $node->save();
+
+    // Set the 404 page alias to node/13.
+    // Ensure the page '/node/13' exists.
+    $404_node = \Drupal\node\Entity\Node::load(13);
+    if ($404_node) {
+      // Set alias for 404 page to point to /node/13
+      \Drupal::service('path_alias.manager')->save([
+        'alias' => '/404',
+        'pid' => 'node/13',
+      ]);
+      
+      // Set the 404 page in system.site configuration
+      Drupal::configFactory()
+        ->getEditable('system.site')
+        ->set('page.404', '/node/13')
+        ->save(TRUE);
+    }
   }
 
   return [];
