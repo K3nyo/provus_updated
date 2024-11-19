@@ -122,7 +122,24 @@ function provus_install_demo_content(array &$install_state) {
       ],
     ];
 
-    foreach($content as $pattern => $item) {
+    // Ensure that node 13 exists before setting the alias
+    $node_404 = \Drupal\node\Entity\Node::load(13);
+
+    if ($node_404) {
+      // Create the alias for /404 and set it to node/13
+      \Drupal::service('path_alias.manager')->save([
+        'alias' => '/404',
+        'source' => 'node/13', // Set source path
+      ]);
+
+      // Optionally, set this node as the 404 page in system.site configuration
+      Drupal::configFactory()
+        ->getEditable('system.site')
+        ->set('page.404', '/node/13')
+        ->save(TRUE);
+    }
+
+    foreach ($content as $pattern => $item) {
       $path = \Drupal::service('path_alias.manager')->getPathByAlias($pattern);
 
       if (preg_match('/node\/(\d+)/', $path, $matches)) {
@@ -138,6 +155,7 @@ function provus_install_demo_content(array &$install_state) {
         }
       }
     }
+
     Drupal::configFactory()
       ->getEditable('exclude_node_title.settings')
       ->set('nid_list', $excludeNodeTitle)
@@ -150,23 +168,6 @@ function provus_install_demo_content(array &$install_state) {
       $node->setRevisionLogMessage('Changed moderation state to Published.');
     }
     $node->save();
-
-    // Set the 404 page alias to node/13.
-    // Ensure the page '/node/13' exists.
-    $404_node = \Drupal\node\Entity\Node::load(13);
-    if ($404_node) {
-      // Set alias for 404 page to point to /node/13
-      \Drupal::service('path_alias.manager')->save([
-        'alias' => '/404',
-        'pid' => 'node/13',
-      ]);
-      
-      // Set the 404 page in system.site configuration
-      Drupal::configFactory()
-        ->getEditable('system.site')
-        ->set('page.404', '/node/13')
-        ->save(TRUE);
-    }
   }
 
   return [];
