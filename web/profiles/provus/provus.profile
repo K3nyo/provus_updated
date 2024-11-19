@@ -122,20 +122,17 @@ function provus_install_demo_content(array &$install_state) {
       ],
     ];
 
-    // Ensure that node 13 exists before setting the alias
     $node_404 = \Drupal\node\Entity\Node::load(13);
 
     if ($node_404) {
-      // Create the alias for /404 and set it to node/13
       \Drupal::service('path_alias.manager')->save([
         'alias' => '/404',
         'source' => 'node/13', // Set source path
       ]);
 
-      // Optionally, set this node as the 404 page in system.site configuration
       Drupal::configFactory()
         ->getEditable('system.site')
-        ->set('page.404', '/node/13')
+        ->set('page.404', '/404')
         ->save(TRUE);
     }
 
