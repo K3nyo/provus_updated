@@ -119,7 +119,7 @@ function provus_install_demo_content(array &$install_state) {
     $path = \Drupal::service('path_alias.manager')->getPathByAlias('/404');
       Drupal::configFactory()
         ->getEditable('system.site')
-        ->set('page.404', $path) // Correct key for 404 error page
+        ->set('page.404', $path)
         ->save(TRUE);
 
     $content = [

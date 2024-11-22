@@ -96,6 +96,9 @@
             content: "\f053 ";
             @include carousel-arrows;
           }
+          &:hover::before {
+            color: $primary-hover;
+          }
         }
         .lSNext {
           right: 7px;
@@ -111,6 +114,9 @@
           &:before {
             content: "\f054";
             @include carousel-arrows;
+          }
+          &:hover::before {
+            color: $primary-hover;
           }
         }
       }
@@ -230,6 +236,7 @@
                 display: block;
                 align-self: unset;
                 flex-grow: unset;
+                padding-left: $padding-padding-xxxs;
                 .card-title {
                   margin-top: 0;
                   margin-bottom: $padding-padding-xlg;
