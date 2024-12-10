@@ -200,6 +200,9 @@
             "drupal/smart_date": {
                 "3381131: Deprecated $dateFormatter property": "https://git.drupalcode.org/project/smart_date/-/merge_requests/63.patch",
                 "3409287: Deprecation in Drupal 10.2: Smart Date List Item allowed values must be passed as array":  "https://git.drupalcode.org/project/smart_date/-/merge_requests/81.patch"
+            },
+            "drupal/fontawesome": {
+                "3417909: Duplicate icons in 8.x-2.26": "https://www.drupal.org/files/issues/2024-01-29/8.x-2.26-fix-duplicates_0.patch"
             }
         }
     },
